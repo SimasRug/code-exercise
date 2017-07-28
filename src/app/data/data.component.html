@@ -1,0 +1,15 @@
+<div *ngIf = "data !=''">
+  <h2>Plain text data display</h2>
+  <div class="card">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item active">
+        <div class="col-md-6 col-xs-2 text-center">Date</div>
+        <div class="col-md-6 col-xs-2 text-center">HKLD</div>
+      </li>
+      <li class="list-group-item" *ngFor="let d of data | slice:0:11" [ngClass]="{'even': number%2 == 0, 'odd': number%2 != 0}">
+          <div class="col-md-6 col-xs-2 text-center"> {{d.timestamp | date : 'medium'}} </div>
+          <div class="col-md-6 col-xs-2 text-center"> {{d.hkld}} </div>
+      </li>
+    </ul>
+  </div>
+</div>

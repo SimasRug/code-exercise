@@ -1,0 +1,8 @@
+<div *ngIf = "data">
+    <h2>Chart data display</h2>
+    <div [chart]="chart"></div>
+    <p>To zoom, click on the chart and drag horizontally. To pan, click shift and drag</p>
+</div>
+<div *ngIf = "!data" >
+    <h2>No Incoming Data</h2>
+</div>

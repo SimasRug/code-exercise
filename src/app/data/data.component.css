@@ -1,0 +1,15 @@
+li:nth-child(even).even {
+    background-color: #fffff7;
+}
+li:nth-child(odd).odd {
+    background-color: #fffff7;
+}
+.active {
+    background-color: #000;
+    border: none;
+}
+h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+}
