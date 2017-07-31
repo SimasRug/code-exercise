@@ -1,28 +1,45 @@
 # CodeExercise
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.2.
+This repository contains the code for **Petrolink Code Exercise**, based on Angular framework. Dependencies include but not are limited to:
 
+- [Angular][angular] ([Typescript][typescript]).
+
+## Requirments
+There are diffrent kind of software requirments depending on development activities
+
+### Core requirments
+Following libraries, packages and softwares are needed:
+
+- [`git`][git],
+- [`node`][node] and bundled [`npm`][npm],
+- [`typescript`][typescript],
+- [`angular`][angular-cli].
+
+## Installation
+`git` and `node` have _step-by-step_ documentation which allows you to successfully install these software on your machine:
+
+- [Git installation process][git-installation],
+- [node installation process][node-installation].
+
+`typescript` and `angular-cli` must be installed globaly.
+
+```bash
+$ npm install -g typescript
+$ npm install -g @angular/cli
+```
+Now that your system is ready, you can clone the project repository from [Github][github]:
+
+```bash
+git clone https://github.com/SimasRug/code-exercise.git
+```
+
+Install `node` dependencies inside your project folder:
+
+```bash
+$ cd /path/to/project
+$ npm install
+```
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
