@@ -9,16 +9,11 @@ import { Chart } from 'angular-highcharts';
 })
 export class ChartDataComponent implements OnInit {
 
-   options:Object;
-
-  constructor(private getDataService: GetDataService) { 
-
-  } 
-  test = [];
+   options: Object;
+    date = [];
   chart = new Chart({
        chart: {
-        zoomType:'x',
-        // pinchType:'x',
+        zoomType: 'x',
         type: 'line',
         panning: true,
         panKey: 'shift'
@@ -30,7 +25,7 @@ export class ChartDataComponent implements OnInit {
         enabled: false
       },
       xAxis: {
-        categories: this.test
+        categories: this.date
       },
       series: [{
         name: 'Incoming Data',
@@ -39,12 +34,19 @@ export class ChartDataComponent implements OnInit {
   });
   connection;
   data;
+
+  constructor(private getDataService: GetDataService) {}
+
+ 
   ngOnInit() {
     this.connection = this.getDataService.getData().subscribe( d => {
     this.data = d;
     this.chart.addPoint(parseFloat(this.data.hkld));
-    var timestamp = new Date(this.data.timestamp); 
-    this.test.push(timestamp.getHours() +":"+ timestamp.getMinutes()+":"+ timestamp.getSeconds()+" | "+timestamp.getDate()+"/"+(timestamp.getMonth()+1) +"/" +timestamp.getFullYear());;
+    const timestamp = new Date(this.data.timestamp);
+    this.date.push(
+          timestamp.getHours() + ':' + timestamp.getMinutes() + ':' +
+          timestamp.getSeconds() + '|' + timestamp.getDate() + '/' + (timestamp.getMonth() + 1) + '/' +
+          timestamp.getFullYear());
     });
   }
 

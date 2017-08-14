@@ -19,6 +19,11 @@ export class DataComponent implements OnInit, OnDestroy {
     this.connection = this.getDataService.getData().subscribe( d => {
       this.data.unshift(d);
       this.number++;
+      if(this.data.length > 20) {
+        console.log('Before splicing', this.data.length);
+        this.data.splice(21, 1);
+      }
+      console.log('After splcing', this.data.length);
     });
   }
 
